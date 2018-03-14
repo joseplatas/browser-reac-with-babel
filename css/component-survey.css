@@ -1,0 +1,213 @@
+#survey_form{
+  width: 95%;
+  height: auto;
+  max-width: 990px;
+  height: auto;
+  margin: 20px auto;
+  text-align: left;
+  font-size: 16px;
+  line-height: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+#survey_form *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+#survey_form h1.page_title{
+  display: block;
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: bold;
+  color: #008ecf;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #ededed;
+  font-family: Arial, Helvetica, sans-serif;
+}
+#survey_form .instructions{
+  font-size: 16px;
+  line-height: 24px;
+  padding: 20px 0;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+}
+#survey_form .question_wrapper{
+  width: 100%;
+  height: auto;
+  padding: 25px 15px;
+  border:1px solid #ededed;
+  border-radius: 10px;
+  margin-bottom: 40px;
+}
+#survey_form .question_wrapper.error{
+  border-color: red;
+}
+#survey_form .error_message{
+  background-color: #f2dede;
+  border-color: #ebcccc;
+  color: #a94442;
+  padding: 10px;
+  margin: 5px 0;
+}
+#survey_form .success_message{
+  background-color: #dff0d8;
+  border-color: #d0e9c6;
+  color: #3c763d;
+  padding: 10px;
+  margin: 5px 0;
+  text-align: center;
+}
+#survey_form .question{
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 20px;
+}
+#survey_form .question.required:after{
+  content: "*";
+  color: #d5172f;
+  font-size: 18px;
+}
+#survey_form .question span{
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  display: inline-block;
+  background: #008ecf;
+  color: #fff;
+  text-align: center;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+/*Questions that are side by side*/
+#survey_form table{
+  border:0;
+  max-width: 400px;
+  margin-bottom: 0;
+}
+#survey_form table tr{
+  border:0;
+}
+#survey_form table tr td{
+  border:0;
+  vertical-align: middle;
+}
+/*Input styling*/
+#survey_form input[type='text'],
+#survey_form input[type='email'],
+#survey_form input[type='number'],
+#survey_form select{
+  width: 100%;
+  max-width: 300px;
+  height: 36px;
+  border:1px solid #9b9b9b;
+  padding: 0 10px;
+  font-size: 16px;
+  -webkit-appearance: none;
+  float: none;
+}
+#survey_form input[type='text']:focus,
+#survey_form input[type='email']:focus,
+#survey_form input[type='number']:focus,
+#survey_form textarea:focus,
+#survey_form select:focus{
+  border-color: #008ecf;
+}
+#survey_form textarea{
+  width: 100%;
+  max-width: 500px;
+  min-height: 150px;
+  max-height: 300px;
+  padding: 10px;
+  border:1px solid #9b9b9b;
+  font-size: 16px;
+  line-height: 20px;
+  float: none;
+}
+#survey_form select{
+  background: url("http://icuracao.com/skin/frontend/enterprise/curacao-responsive-new/images/selectArrows.jpg") no-repeat #ffffff right
+}
+/*for single values*/
+#survey_form label{
+  font-size: 16px;
+  margin-right: 10px;
+
+}
+
+/*radio box styling*/
+#survey_form .check_option{
+  width: 100%;
+  height:auto;
+  margin-bottom: 10px;
+  position: relative;
+}
+#survey_form .check_option input[type='radio'],
+#survey_form .check_option input[type='checkbox']{
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+  position: absolute;
+  left:5px;
+  top:5px;
+  cursor: pointer;
+}
+#survey_form .check_option label{
+  width: 100%;
+  height: auto;
+  min-height: 36px;
+  line-height: 36px;
+  font-size: 16px;
+  padding-left: 40px;
+  display: block;
+  cursor: pointer;
+}
+#survey_form .check_option label:hover{
+  background: #ededed;
+}
+#survey_form button{
+  background: #008ecf;
+  color: #fff;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  border: 0;
+  border-radius: 10px;
+  display: inline-block;
+  width: 220px;
+  height: 50px;
+  cursor: pointer;
+  margin: auto;
+}
+
+
+/*Survey message*/
+#survey_form .survey_message{
+  width: 95%;
+  height: auto;
+  max-width: 990px;
+  height: auto;
+  margin: 20px auto;
+  text-align: left;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+}
+#survey_form .survey_message p{
+  font-size: 16px;
+  line-height: 24px;
+  padding: 20px 0;
+}
+#survey_form .survey_message button{
+  background: #f26722;
+  color: #fff;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  border: 0;
+  border-radius: 10px;
+  display: inline-block;
+  width: 220px;
+  height: 50px;
+  cursor: pointer;
+  margin: auto;
+}
