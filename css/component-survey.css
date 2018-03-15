@@ -125,7 +125,7 @@
   float: none;
 }
 #survey_form select{
-  background: url("http://icuracao.com/skin/frontend/enterprise/curacao-responsive-new/images/selectArrows.jpg") no-repeat #ffffff right
+  background: url("../img/selectArrows.jpg") no-repeat #ffffff right
 }
 /*for single values*/
 #survey_form label{
