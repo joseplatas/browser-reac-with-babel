@@ -9,40 +9,60 @@ function InformationSurvey(props) {
 }
 
 function SelectQuestion(props){
+  let options = [];
+  for (var i = 0; i < props.data.options.length; i++) {
+    options.push(<option value="{props.data.options[i]}">{props.data.options[i]}</option>)
+  }
+  var requiredClass = (props.data.isRequired)?"required":"";
+
   return(
     <div className="question_wrapper">
-      <div className="question required">
+      <div className={"question " + requiredClass }>
         <span className="number">{props.id}</span> {props.data.question_text}
       </div>
-      <select>
-        <option value="" disabled selected>Rate from 1 to 10</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-        <option value="8">8</option>
-        <option value="9">9</option>
-        <option value="10">10</option>
+      <select name={"answer_"+props.id}>
+        <option value="" disabled selected>Please choose the best answer</option>
+        {options}
       </select>
     </div>
   );
 }
 
 function InputQuestion(props){
+  var requiredClass = (props.data.isRequired)?"required":"";
   return(
     <div className="question_wrapper">
-      <div className="question required">
+      <div className={"question " + requiredClass }>
         <span className="number">{props.id}</span> {props.data.question_text}
       </div>
-      <input type="text" />
+      <input type="text" name={"answer_"+props.id}/>
     </div>
   );
 }
+
+function TextareaQuestion(props){
+  var requiredClass = (props.data.isRequired)?"required":"";
+  return(
+    <div className="question_wrapper">
+      <div className={"question " + requiredClass }>
+        <span className="number">{props.id}</span> {props.data.question_text}
+      </div>
+      <textarea name={"answer_"+props.id}></textarea>
+    </div>
+  );
+}
+
 //survey form builder
 class SurveyForm extends React.Component{
+  constructor(props){
+    super(props);
+
+    this.state = {
+      answers: []
+    }
+    //handle the change of data
+    this.get_answers = this.get_answers.bind(this);
+  }
 
   build_questions(){
     let qComponents = [];
@@ -57,6 +77,9 @@ class SurveyForm extends React.Component{
         case 'text':
           qComponents.push(<InputQuestion id={id} data={q}/>);
           break;
+        case 'textarea':
+          qComponents.push(<TextareaQuestion id={id} data={q}/>);
+          break;
         default:
           //nothing
       }
@@ -66,10 +89,20 @@ class SurveyForm extends React.Component{
     return qComponents;
   }
 
+
+  get_answers(event){
+    event.preventDefault();
+    console.log("Checking answers");
+
+  }
+
   render(){
     return(
       <form id="customer_survey_form" action="#" method="post">
         {this.build_questions()}
+        <center>
+          <button onClick={this.get_answers}>SUBMIT</button>
+        </center>
       </form>
     )
   }
@@ -102,6 +135,12 @@ const survey_data = {
     type: "text",
     options: [],
     isRequired: false
+  },
+  {
+    question_text: "Question for the textarea",
+    type: "textarea",
+    options: [],
+    isRequired: true
   }
   ]
 }
